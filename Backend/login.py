@@ -34,7 +34,7 @@ def login():
             return render_template('index.html', msg = msg)
         else:
             msg = 'Incorrect username / password !'
-    return render_template('login.html', msg = msg)
+    return render_template('login.component.html', msg = msg)
 
 @app.route('/logout')
 def logout():
@@ -67,7 +67,7 @@ def register():
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
-    return render_template('register.html', msg = msg)
+    return render_template('signup.component.html', msg = msg)
 
 if __name__ == '__main__':
     app.run(port=5000,debug=True)
