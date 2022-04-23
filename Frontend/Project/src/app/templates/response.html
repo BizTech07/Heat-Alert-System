@@ -1,3 +1,5 @@
+
+<!doctype html>
 <table class="table table-bordered">
     <tr>
     <th width="10%">date</th>
@@ -9,11 +11,8 @@
     <th width="10%">ambient_temperature</th>
     <th width="15%">module_temperature</th>
     <th width="10%">irrediance</th>
-
-
-
-
     </tr>
+
     {% for row in panelgenerationrange %}
         <tr>
         <td>{{row.date}}</td>
@@ -25,8 +24,6 @@
         <td>{{row.ambient_temperature}}</td>
         <td>{{row.module_temperature}}</td>
         <td>{{row.irrediance}}</td>
-
-
         </tr>
     {% endfor %}
 </table>
