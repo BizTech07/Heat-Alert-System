@@ -7,6 +7,38 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
   <link rel="stylesheet" href="vtem-f.component.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" async></script>
+  <!-- Script -->
+  <script>
+    $(document).ready(function () {
+      $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd'
+      });
+      $(function () {
+        $("#From").datepicker();
+        $("#to").datepicker();
+      });
+      $('#range').click(function () {
+        var From = $('#From').val();
+        var to = $('#to').val();
+        if (From != '' && to != '') {
+          $.ajax({
+            url: "/range",
+            method: "POST",
+            data: { From: From, to: to },
+            success: function (data) {
+              $('#panel_generation_table').html(data);
+              $('#panel_generation_table').append(data.htmlresponse);
+            }
+          });
+        }
+        else {
+          alert("Please Select the Date");
+        }
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -17,7 +49,6 @@
     <a href="#">Contact</a>
     <div class="dot"></div>
   </nav>
-  
   <div class="container">
     <div class="col-md-2">
       <input type="text" name="From" id="From" class="form-control" placeholder="From Date" />
@@ -31,7 +62,7 @@
     <div class="clearfix"></div>
 
     <div class="display_table">
-    
+
     </div>
 
     <div id="panel_generation_table">
@@ -112,38 +143,8 @@
     </div>
 
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
-  <!-- Script -->
-  <script>
-    $(document).ready(function () {
-      $.datepicker.setDefaults({
-        dateFormat: 'yy-mm-dd'
-      });
-      $(function () {
-        $("#From").datepicker();
-        $("#to").datepicker();
-      });
-      $('#range').click(function () {
-        var From = $('#From').val();
-        var to = $('#to').val();
-        if (From != '' && to != '') {
-          $.ajax({
-            url: "/range",
-            method: "POST",
-            data: { From: From, to: to },
-            success: function (data) {
-              $('#panel_generation_table').html(data);
-              $('#panel_generation_table').append(data.htmlresponse);
-            }
-          });
-        }
-        else {
-          alert("Please Select the Date");
-        }
-      });
-    });
-  </script>
+
+  
 </body>
 
 </html>
