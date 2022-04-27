@@ -14,13 +14,13 @@
 
 <body>
  <div class="login">
-	<h1>Predict Daily Yield</h1>
+	<h1>Predict Excess Temperature</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
         <input type="text" name="ambient_temp" placeholder="Ambient Temperature" required="required" />
-    	<input type="text" name="module_temp" placeholder="module temperature" required="required" />
-        <input type="text" name="irradiance" placeholder="irradiance" required="required" />
+    	<input type="text" name="module_temp" placeholder="Module Temperature" required="required" />
+        <input type="text" name="irradiance" placeholder="Irradiance" required="required" />
 		
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
