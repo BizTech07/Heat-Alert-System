@@ -16,9 +16,9 @@ def template():
          
 app.secret_key = "caircocoders-ednalan"
          
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = '127.0.0.1'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'biztech07@4'
 app.config['MYSQL_DB'] = 'biztech07'#----add the name of the data base here -  Biztech 7-----#
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
