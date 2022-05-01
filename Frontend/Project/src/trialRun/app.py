@@ -798,7 +798,7 @@ info = {
     }
 }
 
-@app.route("/")
+@app.route("/result")
 def result():
 
     return render_template("chartindex.html")
