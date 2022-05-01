@@ -54,7 +54,7 @@ jobs:
 
       - name: Run Unit Tests 
         run: |
-          python Frontend/Project/src/app/tests.py
+          python Frontend/Project/src/trialRun/tests.py
           
               
 
