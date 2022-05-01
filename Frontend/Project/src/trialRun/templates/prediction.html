@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction</title>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/prediction.css') }}">
+
+</head>
+
+<body>
+  <nav class="navMenu">
+    <a href="{{ url_for('template') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('index') }}">Fluctuations</a>
+    <a href="{{ url_for('chart') }}">Chart</a>
+    <a href="{{ url_for('predi') }}">Prediction</a>
+  </nav>
+
+  <div class="login">
+    <h1>Predict Excess Temperature</h1>
+
+    <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="ambient_temp" placeholder="Ambient Temperature" required="required" />
+      <input type="text" name="module_temp" placeholder="Module Temperature" required="required" />
+      <input type="text" name="irradiance" placeholder="Irradiance" required="required" />
+
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <br>
+    {{ prediction_text }}
+
+  </div>
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>BizTech<span> VII</span></h3>
+
+      <p class="footer-links">
+        <a href="#" class="link-1">Home</a>
+
+        <a href="login.component.html">About</a>
+
+        <a href="#">Team</a>
+
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">BizTech Vii © 2015</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Ramakrishna RD</span> Wellavatte, Colombo 7</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+94 70 678 4567</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">BizTechVii@Hotmail.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        More than 20 years of experience at the forefront of the industry developing wind farms in Australia. We have
+        been involved in more than 100 advanced and operational wind farms with projects totalling greater than 20 000
+        MW in India, South Africa, Sri Lanka, New Zealand and the Pacific.
+      </p>
+    </div>
+
+  </footer>
+</body>
+
+</html>

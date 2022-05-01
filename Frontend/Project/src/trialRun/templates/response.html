@@ -1,0 +1,29 @@
+
+<!doctype html>
+<table class="table table-bordered">
+    <tr>
+    <th width="10%">date</th>
+    <th width="5%">panel_id</th>
+    <th width="15%">DC_Power</th>
+    <th width="15%">AC_Power</th>
+    <th width="10%">daily_yeild</th>
+    <th width="10%">total_yeild</th>
+    <th width="10%">ambient_temperature</th>
+    <th width="15%">module_temperature</th>
+    <th width="10%">irrediance</th>
+    </tr>
+
+    {% for row in panelgenerationrange %}
+        <tr>
+        <td>{{row.date}}</td>
+        <td>{{row.panel_id}}</td>
+        <td>{{row.DC_power}}</td>
+        <td>{{row.AC_power}}</td>
+        <td>{{row.daily_yeild}}</td>
+        <td>{{row.total_yeild}}</td>
+        <td>{{row.ambient_temperature}}</td>
+        <td>{{row.module_temperature}}</td>
+        <td>{{row.irrediance}}</td>
+        </tr>
+    {% endfor %}
+</table>
