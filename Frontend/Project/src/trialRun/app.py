@@ -62,7 +62,7 @@ def range():
     return jsonify({'htmlresponse': render_template('response.html', panelgenerationrange=panelgenerationrange)})#----------set the range---------------#
  
 
-train_model = pickle.load(open('Frontend/Project/src/trialRun/train.pkl','rb'))
+train_model = pickle.load(open('train.pkl','rb'))
 
 @app.route('/')
 def appShow():
