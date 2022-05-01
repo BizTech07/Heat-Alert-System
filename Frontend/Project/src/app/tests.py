@@ -10,7 +10,7 @@ MYSQL_HOST = "127.0.0.1"
 MYSQL_PORT = "3306"
 
 class TestRestApi(unittest.TestCase):
-    #setup test database
+    #setup database
     def setUp(self):
         print("setup....................................")
         cnx = mysql.connector.connect(
@@ -39,7 +39,7 @@ class TestRestApi(unittest.TestCase):
             exit(1)
         cnx.database = MYSQL_DB
 
-        #create panelgenearation table
+        #create panelgenration table
         query = """CREATE TABLE `panelgeneration` (
                     `date` DATE NOT NULL,
                     `panel_id` INT(7),
@@ -62,7 +62,7 @@ class TestRestApi(unittest.TestCase):
         else:
             print("OK")
 
-        #insert data into the panelgeneration table
+        #insert data into the panelgenration table
         insert_data_query = """INSERT INTO `panelgeneration` (`date`,`panel_id`, `DC_Power`, `AC_Power`, `daily_yeild`,`total_yeild`, `ambient_temperature`,`module_temperature`,`irrediance`) VALUES
                                 ('2020-05-17', 4136001,224.42,220.04,9351.866667,2516176.867,35.50715917,38.92884879, 0.093825594),
                                 ('2020-05-18', 4136001,340.3133333,334.5333333,9266.8,2525592.8,32.15728253,35.15568323, 0.16798548),
@@ -104,7 +104,7 @@ class TestRestApi(unittest.TestCase):
         cursor.close()
         cnx.close()
 
-    #tear down database
+    #teardown database
     def tearDown(self):
         print("teardown....................................")
         cnx = mysql.connector.connect(
