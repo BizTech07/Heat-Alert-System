@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+  <header>
+    <nav class="navMenu">
+      <a href="{{ url_for('template') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('index') }}">Fluctuations</a>
+      <a href="{{ url_for('chart') }}">Chart</a>
+      <a href="{{ url_for('predi') }}">Prediction</a>
+    </nav>
+  </header>
+  {% block content %}
+  {% endblock %}
+  <div class="Main-Div">
+    <div class="containerleft">
+      <img src="{{ url_for('static', filename='image/gg.jpeg') }}" alt="solar" class="image">
+    </div>
+
+    <div class="containerright">
+      <img src="{{ url_for('static', filename='image/solar.jpeg') }}" alt="solar" class="image">
+    </div>
+  </div>
+
+  <!-- <button type="button" class="lefttBtn" onclick="location.href='../templates/index.html'"  >View Temperature Fluctuations</button> -->
+  <!-- <button type="button" class="rightBtn" onclick="location.href='../ML/templates/prediction.html'"   >Temperature Prediction</button> -->
+
+
+
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>BizTech<span> VII</span></h3>
+
+      <p class="footer-links">
+        <a href="#" class="link-1">Home</a>
+
+        <a href="login.component.html">About</a>
+
+        <a href="#">Team</a>
+
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">BizTech Vii © 2015</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Ramakrishna RD</span> Wellavatte, Colombo 7</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+94 70 678 4567</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">BizTechVii@Hotmail.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        More than 20 years of experience at the forefront of the industry developing wind farms in Australia. We have
+        been involved in more than 100 advanced and operational wind farms with projects totalling greater than 20 000
+        MW in India, South Africa, Sri Lanka, New Zealand and the Pacific.
+      </p>
+
+
+    </div>
+
+  </footer>
+ 
+
+</body>
+
+</html>

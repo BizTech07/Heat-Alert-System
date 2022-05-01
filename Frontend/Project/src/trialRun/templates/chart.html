@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>CHARTS</title>
+    <!-- loading local stylesheet .css file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chart.css') }}">
+  </head>
+
+  <body>
+    <nav class="navMenu">
+      <a href="{{ url_for('template') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('index') }}">Fluctuations</a>
+      <a href="{{ url_for('chart') }}">Chart</a>
+      <a href="{{ url_for('predi') }}">Prediction</a>
+    </nav>
+    <!--  <canvas> element is used to draw graphics on a web page. -->
+    
+      <canvas id="myChart" width="50%" height="10%"></canvas>
+      <br>
+      <p class="center"><button id="showYear" class="hide">Toggle to Year</button></p>
+  
+      <canvas id="myChartTwo" width="50%" height="10%"></canvas>
+      <br>
+      <p class="center"><button id="showYearTwo" class="hide">Toggle to Year</button></p>
+      <!-- (best practice to load all the script files at the bottom) -->
+      
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      
+      <!-- loading a javascript library for data visualization Charts.js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <!-- local javascript file -->
+    <script src="{{url_for('static', filename='js/chart.js')}}"></script>
+  </body>
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+
+      <h3>BizTech<span> VII</span></h3>
+
+      <p class="footer-links">
+        <a href="#" class="link-1">Home</a>
+
+        <a href="login.component.html">About</a>
+
+        <a href="#">Team</a>
+
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">BizTech Vii © 2015</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Ramakrishna RD</span> Wellavatte, Colombo 7</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+94 70 678 4567</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">BizTechVii@Hotmail.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About the company</span>
+        More than 20 years of experience at the forefront of the industry developing wind farms in Australia. We have
+        been involved in more than 100 advanced and operational wind farms with projects totalling greater than 20 000
+        MW in India, South Africa, Sri Lanka, New Zealand and the Pacific.
+      </p>
+    </div>
+
+  </footer>
+
+</html>
