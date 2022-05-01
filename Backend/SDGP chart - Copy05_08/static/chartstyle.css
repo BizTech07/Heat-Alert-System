@@ -1,0 +1,21 @@
+/* Styles go here */
+
+.hide{
+    display:none;
+  }
+  .center {
+    text-align:center;
+  }
+   #myChart{
+      width: 50%;
+      height: 50%;
+      border: 2px solid red;
+
+  }
+
+  #myChartTwo{
+    width: 50%;
+    height: 50%;
+    border: 2px solid blue;
+
+}
